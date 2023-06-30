@@ -1,11 +1,12 @@
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   colors: {
-    background: '#fefffa',
+    background: '#fdfdfb',
     primary: {
-      text: '#111301',
-      primary_button: '#6af31b',
-      secondary_button: '#ffffff',
-      accent: '#1bf338'
+      text: '#0a0b05',
+      primary_button: '#558038',
+      secondary_button: '#e3f3e4',
+      accent: '#38803f'
     }
   }
 }

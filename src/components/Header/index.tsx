@@ -4,7 +4,7 @@ import pet from '../../assets/images/pet1.png';
 export default function HeaderComponent() {
   return (
     <Container>
-      <img src={pet} alt="mypets" width="201" />
+      <img src={pet} alt="mypets" width="199" />
     </Container>
   )
 }

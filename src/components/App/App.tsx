@@ -4,6 +4,7 @@ import defaultTheme from '../../assets/style/theme/default';
 import GlobalStyle from '../../assets/style/style';
 import { BrowserRouter } from 'react-router-dom';
 import { Container } from './index';
+import Routes from '../../Router';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <GlobalStyle />
         <Container>
           <HeaderComponent />
+          <Routes />
         </Container>
       </ThemeProvider>
     </BrowserRouter>
