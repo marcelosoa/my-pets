@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   margin-top: 32px;
   position: relative;
-`
+`;
 
 export const WelcomeContainer = styled.div`
   width: 100%;
@@ -26,8 +26,7 @@ export const WelcomeContainer = styled.div`
       color: ${({ theme }) => theme.colors.primary.text};
     }
   }
-
-`
+`;
 
 export const Header = styled.header`
   display: flex;
@@ -37,7 +36,7 @@ export const Header = styled.header`
 
   strong {
     font-size: 24px;
-    color: #222
+    color: #222;
   }
 
   a {
@@ -54,7 +53,7 @@ export const Header = styled.header`
       color: #fff;
     }
   }
-`
+`;
 
 export const ListContainer = styled.div`
   margin-top: 24px;
@@ -62,20 +61,19 @@ export const ListContainer = styled.div`
   header {
     .sort-button {
       background-color: transparent;
-    margin-bottom: 8px;
-    border: none;
-    display: flex;
-    align-items: center;
+      margin-bottom: 8px;
+      border: none;
+      display: flex;
+      align-items: center;
     }
-    
+
     span {
       margin-right: 12px;
       font-weight: bold;
       color: ${({ theme }) => theme.colors.primary.text};
     }
   }
-
-`
+`;
 
 export const PetCards = styled.div`
   background: ${({ theme }) => theme.colors.primary.secondary_button};
@@ -106,11 +104,10 @@ export const PetCards = styled.div`
       }
 
       span {
-      display: block;
-      font-size: 14px;
-      color: ${({ theme }) => theme.colors.primary.text};
-    }
+        display: block;
+        font-size: 14px;
+        color: ${({ theme }) => theme.colors.primary.text};
+      }
     }
   }
-
-`
+`;

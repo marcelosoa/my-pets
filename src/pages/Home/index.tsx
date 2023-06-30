@@ -26,7 +26,26 @@ export default function HomeScreen() {
           </div>
           <span>Branco</span>
           <span>Idade</span>
-          
+          </div>
+        </PetCards>
+        <PetCards>
+          <div className='info'> 
+          <div className='pet-name'>
+            <strong>Matilda</strong>
+            <small>Felino</small>
+          </div>
+          <span>Branco</span>
+          <span>Idade</span>
+          </div>
+        </PetCards>
+        <PetCards>
+          <div className='info'> 
+          <div className='pet-name'>
+            <strong>Matilda</strong>
+            <small>Felino</small>
+          </div>
+          <span>Branco</span>
+          <span>Idade</span>
           </div>
         </PetCards>
       </ListContainer>
