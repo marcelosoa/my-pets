@@ -1,12 +1,12 @@
-import HeaderComponent from '../Header';
-import { ThemeProvider } from 'styled-components';
-import defaultTheme from '../../assets/style/theme/default';
-import GlobalStyle from '../../assets/style/style';
-import { BrowserRouter } from 'react-router-dom';
-import { Container } from './index';
-import Routes from '../../Router';
+import HeaderComponent from '../Header'
+import { ThemeProvider } from 'styled-components'
+import defaultTheme from '../../assets/style/theme/default'
+import GlobalStyle from '../../assets/style/style'
+import { BrowserRouter } from 'react-router-dom'
+import { Container } from './index'
+import Routes from '../../Router'
 
-function App() {
+function App () {
   return (
     <BrowserRouter>
       <ThemeProvider theme={defaultTheme}>
@@ -17,7 +17,7 @@ function App() {
         </Container>
       </ThemeProvider>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

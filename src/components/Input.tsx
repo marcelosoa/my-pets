@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components'
 
 export default styled.input`
   width: 100%;
@@ -19,4 +19,4 @@ export default styled.input`
   &:focus {
     border: 2px solid ${({ theme }) => theme.colors.primary.primary_button};
   }
-`;
+`

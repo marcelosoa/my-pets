@@ -1,9 +1,9 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom'
 
-import HomeScreen from './pages/Home';
-import RegisterPetScreen from './pages/NewPet';
+import HomeScreen from './pages/Home'
+import RegisterPetScreen from './pages/NewPet'
 
-export default function Routes() {
+export default function Routes () {
   return (
     <Switch>
       <Route path="/" exact component={HomeScreen} />

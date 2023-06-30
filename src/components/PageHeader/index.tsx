@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import { Container } from './styled';
+import { Link } from 'react-router-dom'
+import { Container } from './styled'
 
 interface PageProps {
   title: string
 }
 
-export default function PageHeader({ title }: PageProps) {
+export default function PageHeader ({ title }: PageProps) {
   return (
     <Container>
       <Link to="/">

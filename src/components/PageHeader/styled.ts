@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.header`
 margin-bottom: 24px;
@@ -21,6 +21,6 @@ margin-bottom: 24px;
   h1 {
     font-size: 24px;
   }
-`;
+`
 
-export const NewContactInput = styled.label``;
+export const NewContactInput = styled.label``

@@ -1,8 +1,8 @@
-import { Container, WelcomeContainer, Header, ListContainer, PetCards } from './styled';
-import { Link } from 'react-router-dom';
-import select from '../../assets/images/select.png';
+import { Container, WelcomeContainer, Header, ListContainer, PetCards } from './styled'
+import { Link } from 'react-router-dom'
+import select from '../../assets/images/select.png'
 
-export default function HomeScreen() {
+export default function HomeScreen () {
   return (
     <Container>
       <WelcomeContainer>

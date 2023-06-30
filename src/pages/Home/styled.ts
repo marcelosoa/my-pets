@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Container = styled.div`
   margin-top: 32px;
   position: relative;
-`;
+`
 
 export const WelcomeContainer = styled.div`
   width: 100%;
@@ -26,7 +26,7 @@ export const WelcomeContainer = styled.div`
       color: ${({ theme }) => theme.colors.primary.text};
     }
   }
-`;
+`
 
 export const Header = styled.header`
   display: flex;
@@ -53,7 +53,7 @@ export const Header = styled.header`
       color: #fff;
     }
   }
-`;
+`
 
 export const ListContainer = styled.div`
   margin-top: 24px;
@@ -73,7 +73,7 @@ export const ListContainer = styled.div`
       color: ${({ theme }) => theme.colors.primary.text};
     }
   }
-`;
+`
 
 export const PetCards = styled.div`
   background: ${({ theme }) => theme.colors.primary.secondary_button};
@@ -121,4 +121,4 @@ export const PetCards = styled.div`
       margin-left: 10px;
     }
   }
-`;
+`

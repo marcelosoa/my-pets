@@ -1,7 +1,7 @@
-import { Container } from './style';
-import pet from '../../assets/images/pet1.png';
+import { Container } from './style'
+import pet from '../../assets/images/pet1.png'
 
-export default function HeaderComponent() {
+export default function HeaderComponent () {
   return (
     <Container>
       <img src={pet} alt="mypets" width="199" />
