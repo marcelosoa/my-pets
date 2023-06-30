@@ -4,6 +4,7 @@ import Button from "../../components/Button";
 import { Form, ButtonContainer } from './styled';
 
 import React, { useState } from 'react';
+import PageHeader from "../../components/PageHeader";
 
 interface RegisterProps {
   age: number,
@@ -25,23 +26,26 @@ export default function RegisterPetScreen() {
 
 
   return (
-    <Form>
-      <FormGroupComponent error=''>
-        <Input value={name} placeholder="nome do animalzinho" />
-      </FormGroupComponent>
-      <FormGroupComponent error=''>
-        <Input value={type} placeholder="raça" />
-      </FormGroupComponent>
-      <FormGroupComponent error=''>
-        <Input value={color} placeholder="cor do animalzinho" />
-      </FormGroupComponent>
-      <FormGroupComponent error=''>
-        <Input value={age} placeholder="idade do animalzinho" />
-      </FormGroupComponent>
-      <ButtonContainer>
-        <Button type="submit">Cadastrar Novo Pet</Button>
-      </ButtonContainer>
+    <>
+      <PageHeader title="Novo Animalzinho" />
+      <Form>
+        <FormGroupComponent error=''>
+          <Input value={name} placeholder="nome do animalzinho" />
+        </FormGroupComponent>
+        <FormGroupComponent error=''>
+          <Input value={type} placeholder="raça" />
+        </FormGroupComponent>
+        <FormGroupComponent error=''>
+          <Input value={color} placeholder="cor do animalzinho" />
+        </FormGroupComponent>
+        <FormGroupComponent error=''>
+          <Input value={age} placeholder="idade do animalzinho" />
+        </FormGroupComponent>
+        <ButtonContainer>
+          <Button type="submit">Cadastrar Novo Pet</Button>
+        </ButtonContainer>
 
-    </Form>
+      </Form>
+    </>
   )
 }
