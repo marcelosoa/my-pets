@@ -5,7 +5,7 @@ interface FormGroupProps {
   error: string
 }
 
-export default function FormGroupComponent({children, error}: FormGroupProps) {
+export default function FormGroupComponent({ children, error }: FormGroupProps) {
   return (
     <Container>
       {children}

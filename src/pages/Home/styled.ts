@@ -110,4 +110,15 @@ export const PetCards = styled.div`
       }
     }
   }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    button: {
+      color: aqua;
+      background: transparent;
+      border: none;
+      margin-left: 10px;
+    }
+  }
 `;

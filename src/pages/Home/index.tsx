@@ -1,5 +1,6 @@
 import { Container, WelcomeContainer, Header, ListContainer, PetCards } from './styled';
 import { Link } from 'react-router-dom';
+import select from '../../assets/images/select.png';
 
 export default function HomeScreen() {
   return (
@@ -19,7 +20,7 @@ export default function HomeScreen() {
           </button>
         </header>
         <PetCards>
-          <div className='info'> 
+          <div className='info'>
           <div className='pet-name'>
             <strong>Matilda</strong>
             <small>Felino</small>
@@ -29,7 +30,7 @@ export default function HomeScreen() {
           </div>
         </PetCards>
         <PetCards>
-          <div className='info'> 
+          <div className='info'>
           <div className='pet-name'>
             <strong>Matilda</strong>
             <small>Felino</small>
@@ -39,13 +40,18 @@ export default function HomeScreen() {
           </div>
         </PetCards>
         <PetCards>
-          <div className='info'> 
+          <div className='info'>
           <div className='pet-name'>
             <strong>Matilda</strong>
             <small>Felino</small>
           </div>
           <span>Branco</span>
           <span>Idade</span>
+          </div>
+          <div className='actions'>
+            <Link to="/edit/123">
+              <img src={select} alt='edit' />
+            </Link>
           </div>
         </PetCards>
       </ListContainer>
