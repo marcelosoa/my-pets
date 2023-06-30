@@ -94,7 +94,7 @@ export const PetCards = styled.div`
       align-items: center;
 
       small {
-        background: ${({ theme }) => theme.colors.primary.secondary_button};
+        background: ${({ theme }) => theme.colors.primary.accent};
         color: ${({ theme }) => theme.colors.primary.text};
         font-weight: bold;
         text-transform: uppercase;
@@ -102,13 +102,13 @@ export const PetCards = styled.div`
         border-radius: 4px;
         margin-left: 8px;
       }
-
-      span {
+    }
+    span {
+        margin-top: 14px;
         display: block;
-        font-size: 14px;
+        font-size: 12;
         color: ${({ theme }) => theme.colors.primary.text};
       }
-    }
   }
 
   .actions {

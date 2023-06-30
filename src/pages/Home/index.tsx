@@ -22,34 +22,14 @@ export default function HomeScreen () {
         <PetCards>
           <div className='info'>
           <div className='pet-name'>
-            <strong>Matilda</strong>
+            <strong>Nome: Matilda</strong>
             <small>Felino</small>
           </div>
-          <span>Branco</span>
-          <span>Idade</span>
-          </div>
-        </PetCards>
-        <PetCards>
-          <div className='info'>
-          <div className='pet-name'>
-            <strong>Matilda</strong>
-            <small>Felino</small>
-          </div>
-          <span>Branco</span>
-          <span>Idade</span>
-          </div>
-        </PetCards>
-        <PetCards>
-          <div className='info'>
-          <div className='pet-name'>
-            <strong>Matilda</strong>
-            <small>Felino</small>
-          </div>
-          <span>Branco</span>
-          <span>Idade</span>
+          <span>Cor: Branco</span>
+          <span>Idade: 2 </span>
           </div>
           <div className='actions'>
-            <Link to="/edit/123">
+            <Link to="/edit">
               <img src={select} alt='edit' />
             </Link>
           </div>

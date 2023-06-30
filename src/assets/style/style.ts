@@ -7,6 +7,7 @@ export default createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Sora', sans-serif;
     font-size: 16px;
+    letter-spacing: 1px;
   }
 
   body {

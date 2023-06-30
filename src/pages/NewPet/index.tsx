@@ -22,21 +22,20 @@ export default function RegisterPetScreen () {
       <PageHeader title="Novo Animalzinho" />
       <Form>
         <FormGroupComponent error=''>
-          <Input value={name} placeholder="nome do animalzinho" />
+          <Input value={name} placeholder="Nome do animalzinho" />
         </FormGroupComponent>
         <FormGroupComponent error=''>
-          <Input value={type} placeholder="raça" />
+          <Input value={type} placeholder="Tipo" />
         </FormGroupComponent>
         <FormGroupComponent error=''>
-          <Input value={color} placeholder="cor do animalzinho" />
+          <Input value={color} placeholder="Cor do animalzinho" />
         </FormGroupComponent>
         <FormGroupComponent error=''>
-          <Input value={age} placeholder="idade do animalzinho" />
+          <Input value={age} placeholder="Idade do animalzinho" />
         </FormGroupComponent>
         <ButtonContainer>
           <Button type="submit">Cadastrar Novo Pet</Button>
         </ButtonContainer>
-
       </Form>
     </>
   )
