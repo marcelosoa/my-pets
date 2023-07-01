@@ -4,8 +4,6 @@ import Select from '../../components/Select'
 import Button from '../../components/Button'
 import { Form, ButtonContainer } from './styled'
 import useErrors from '../../hooks/useErrors'
-import useFunctions from '../../hooks/useFunctions'
-
 import React, { useState } from 'react'
 import PageHeader from '../../components/PageHeader'
 
@@ -13,10 +11,9 @@ export default function RegisterPetScreen () {
   const [name, setName] = useState<string>('')
   const [age, setAge] = useState<string>()
   const [type, setType] = useState<string>()
-  const [color, setColor] = useState()
-
+  const [color, setColor] = useState<string>()
+  const [search, setSearch] = useState<string>('')
   const { setError, removeError, getErrorMessageByFieldName } = useErrors()
-  // const { handleNameChange, handleTypeChange } = useFunctions()
 
   function handleNameChange (event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value
@@ -40,6 +37,28 @@ export default function RegisterPetScreen () {
     }
   }
 
+  function handleChangeColor (event: React.ChangeEvent<HTMLInputElement>) {
+    const value = event.target.value
+    setColor(value)
+
+    if (!value) {
+      setError({ field: 'color', message: 'Cor é obrigatória' })
+    } else {
+      removeError('color')
+    }
+  }
+
+  function handleChangeAge (event: React.ChangeEvent<HTMLInputElement>) {
+    const value = event.target.value
+    setAge(value)
+
+    if (!value) {
+      setError({ field: 'age', message: 'Idade é obrigatória' })
+    } else {
+      removeError('age')
+    }
+  }
+
   return (
     <>
       <PageHeader title="Novo Animalzinho" />
@@ -54,8 +73,8 @@ export default function RegisterPetScreen () {
         </FormGroupComponent>
         <FormGroupComponent error={getErrorMessageByFieldName('type')}>
           <Select
-          value={type}
-          onChange={handleTypeChange}
+            value={type}
+            onChange={handleTypeChange}
             placeholder="Tipo"
             error={getErrorMessageByFieldName('type')}
           >
@@ -65,14 +84,21 @@ export default function RegisterPetScreen () {
             <option value="4">Roedor</option>
           </Select>
         </FormGroupComponent>
-        <FormGroupComponent error=''>
+        <FormGroupComponent error={getErrorMessageByFieldName('color')}>
           <Input
-          value={color}
-          placeholder="Cor do animalzinho"
+            value={color}
+            onChange={handleChangeColor}
+            placeholder="Cor do animalzinho"
+            error={getErrorMessageByFieldName('error')}
           />
         </FormGroupComponent>
-        <FormGroupComponent error=''>
-          <Input value={age} placeholder="Idade do animalzinho" />
+        <FormGroupComponent error={getErrorMessageByFieldName('age')}>
+          <Input
+          value={age}
+          onChange={handleChangeAge}
+          placeholder="Idade do animalzinho"
+          error={getErrorMessageByFieldName('age')}
+          />
         </FormGroupComponent>
         <ButtonContainer>
           <Button type="submit">Cadastrar Novo Pet</Button>

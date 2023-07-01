@@ -11,11 +11,11 @@ interface PetProps {
   id: string
   name: string
   type: string
-
 }
 
 export default function HomeScreen () {
   const [pets, setPets] = useState<PetProps[]>([])
+  const [search, setSearch] = useState<string>('')
 
   useEffect(() => {
     fetch('http://localhost:3002/pets')
@@ -28,18 +28,24 @@ export default function HomeScreen () {
       })
   }, [])
 
-  console.log(pets)
+  const filteredPets = pets.filter((pet) => (
+    pet.name.includes(search)
+  ))
+
+  function handleChangeSearchPet (event: React.ChangeEvent<HTMLInputElement>) {
+    setSearch(event.target.value)
+  }
 
   return (
     <Container>
       <WelcomeContainer>
         <h1>Bem - vindo ao MyPet!</h1>
-        <input type="search" placeholder="Pesquisar Pet" />
+        <input type="search" placeholder="Pesquisar Pet" value={search} onChange={handleChangeSearchPet}/>
       </WelcomeContainer>
       <Header>
         <strong>
-          Pets: {pets.length}
-          {pets.length === 1 ? ' pet' : ' pets'}
+          Pets: {filteredPets.length}
+          {filteredPets.length === 1 ? ' pet' : ' pets'}
 
           </strong>
         <Link to='/register-pet'>Cadastrar Novo Pet</Link>
@@ -50,7 +56,7 @@ export default function HomeScreen () {
             <span>Nome</span>
           </button>
         </header>
-        {pets.map((pet) => (
+        {filteredPets.map((pet) => (
           <PetCards key={pet.id}>
           <div className='info'>
           <div className='pet-name'>
