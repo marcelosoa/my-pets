@@ -2,6 +2,7 @@ import { Container, WelcomeContainer, Header, ListContainer, PetCards } from './
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import select from '../../assets/images/select.png'
+import LoaderComponent from '../../components/Loader'
 
 interface PetProps {
   age: string
@@ -38,6 +39,7 @@ export default function HomeScreen () {
 
   return (
     <Container>
+      <LoaderComponent />
       <WelcomeContainer>
         <h1>Bem - vindo ao MyPet!</h1>
         <input type="search" placeholder="Pesquisar Pet" value={search} onChange={handleChangeSearchPet}/>
