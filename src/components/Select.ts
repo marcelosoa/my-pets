@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 
-export default styled.input`
+interface SelectProps {
+  error?: string | undefined
+}
+
+export default styled.select<SelectProps>`
   width: 100%;
   background: #fff;
   border: 2px solid #fff;
@@ -19,4 +23,10 @@ export default styled.input`
   &:focus {
     border: 2px solid ${({ theme }) => theme.colors.primary.primary_button};
   }
+
+  ${({ error }) =>
+    error &&
+    `
+    border-color: red;
+  `}
 `

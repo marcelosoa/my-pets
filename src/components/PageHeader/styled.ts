@@ -21,6 +21,10 @@ margin-bottom: 24px;
   h1 {
     font-size: 24px;
   }
+
+  span {
+    color: ${({ theme }) => theme.colors.primary.primary_button};
+  }
 `
 
 export const NewContactInput = styled.label``
