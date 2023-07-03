@@ -15,7 +15,7 @@ export default function RegisterPetScreen () {
   const [search, setSearch] = useState<string>('')
   const { setError, removeError, getErrorMessageByFieldName } = useErrors()
 
-  function handleNameChange(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleNameChange (event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value
     setName(value)
 
@@ -26,7 +26,7 @@ export default function RegisterPetScreen () {
     }
   }
 
-  function handleTypeChange(event: React.ChangeEvent<HTMLSelectElement>) {
+  function handleTypeChange (event: React.ChangeEvent<HTMLSelectElement>) {
     const value = event.target.value
     setType(value)
 
@@ -37,7 +37,7 @@ export default function RegisterPetScreen () {
     }
   }
 
-  function handleChangeColor(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleChangeColor (event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value
     setColor(value)
 
@@ -48,7 +48,7 @@ export default function RegisterPetScreen () {
     }
   }
 
-  function handleChangeAge(event: React.ChangeEvent<HTMLInputElement>) {
+  function handleChangeAge (event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value
     setAge(value)
 

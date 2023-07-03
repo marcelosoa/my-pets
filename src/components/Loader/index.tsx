@@ -2,13 +2,19 @@ import { useState } from 'react'
 import { Overlay } from './styled'
 import ReactDOM from 'react-dom'
 
-export default function LoaderComponent() {
-  const [loading, setLoading] = useState<boolean>()
-  return (
+interface LoadingProps {
+  isLoading: boolean
+}
+
+export default function LoaderComponent ({ isLoading }: LoadingProps) {
+  if (!isLoading) {
+    return null
+  }
+  const portalDiv = document.getElementById('loader-root')!
+  return ReactDOM.createPortal(
     <Overlay>
-      Hello World
-    </Overlay>
+      <div className='loader' />
+    </Overlay>,
+    portalDiv
   )
-
-
 }

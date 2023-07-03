@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface HeaderProps {
+  orderBy: string
+}
+
 export const Container = styled.div`
   margin-top: 32px;
   position: relative;
@@ -55,23 +59,30 @@ export const Header = styled.header`
   }
 `
 
-export const ListContainer = styled.div`
+export const ListHeader = styled.header<HeaderProps>`
   margin-top: 24px;
+  margin-bottom: 8px;
 
-  header {
-    .sort-button {
-      background-color: transparent;
-      margin-bottom: 8px;
-      border: none;
-      display: flex;
-      align-items: center;
-    }
+  button {
+    background-color: transparent;
+    margin-bottom: 8px;
+    border: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
 
-    span {
-      margin-right: 12px;
-      font-weight: bold;
-      color: ${({ theme }) => theme.colors.primary.text};
-    }
+  span {
+    margin-right: 12px;
+    font-weight: bold;
+    color: ${({ theme }) => theme.colors.primary.text};
+  }
+
+  img {
+    margin-right: 8px;
+    transform: ${({ orderBy }) =>
+      orderBy === 'asc' ? 'rotate(180deg)' : 'rotate(0deg)'};
+      transition: transform 0.2s ease-in;
   }
 `
 
@@ -104,11 +115,11 @@ export const PetCards = styled.div`
       }
     }
     span {
-        margin-top: 14px;
-        display: block;
-        font-size: 12;
-        color: ${({ theme }) => theme.colors.primary.text};
-      }
+      margin-top: 14px;
+      display: block;
+      font-size: 12;
+      color: ${({ theme }) => theme.colors.primary.text};
+    }
   }
 
   .actions {
