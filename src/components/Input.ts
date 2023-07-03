@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 interface InputProps {
   error?: string
+  hasIconLeft?: boolean
 }
 
 export default styled.input<InputProps>`
