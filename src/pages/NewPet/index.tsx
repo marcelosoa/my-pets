@@ -6,35 +6,54 @@ import { Form, ButtonContainer } from './styled'
 import useErrors from '../../hooks/useErrors'
 import React, { useState } from 'react'
 import PageHeader from '../../components/PageHeader'
-import useFunctions from '../../hooks/useFunctions'
 
 export default function RegisterPetScreen () {
-  const [name, setName] = useState<string>('')
+  const [name, setName] = useState<string>()
   const [age, setAge] = useState<string>()
   const [type, setType] = useState<string>()
   const [color, setColor] = useState<string>()
   const [search, setSearch] = useState<string>('')
   const { setError, removeError, getErrorMessageByFieldName } = useErrors()
-  const { handleNameChange, handleTypeChange } = useFunctions()
 
+  function handleNameChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const value = event.target.value
+    setName(value)
 
-  function handleChangeColor (event: React.ChangeEvent<HTMLInputElement>) {
+    if (!value) {
+      setError({ field: 'name', message: 'O nome do pet é obrigatório' })
+    } else {
+      removeError('name')
+    }
+  }
+
+  function handleTypeChange(event: React.ChangeEvent<HTMLSelectElement>) {
+    const value = event.target.value
+    setType(value)
+
+    if (!value) {
+      setError({ field: 'type', message: 'O Tipo é obrigatório' })
+    } else {
+      removeError('type')
+    }
+  }
+
+  function handleChangeColor(event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value
     setColor(value)
 
     if (!value) {
-      setError({ field: 'color', message: 'Cor é obrigatória' })
+      setError({ field: 'color', message: 'A cor é obrigatória' })
     } else {
       removeError('color')
     }
   }
 
-  function handleChangeAge (event: React.ChangeEvent<HTMLInputElement>) {
+  function handleChangeAge(event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value
     setAge(value)
 
     if (!value) {
-      setError({ field: 'age', message: 'Idade é obrigatória' })
+      setError({ field: 'age', message: 'A Idade é obrigatória' })
     } else {
       removeError('age')
     }
