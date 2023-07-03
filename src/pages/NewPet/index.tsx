@@ -6,6 +6,7 @@ import { Form, ButtonContainer } from './styled'
 import useErrors from '../../hooks/useErrors'
 import React, { useState } from 'react'
 import PageHeader from '../../components/PageHeader'
+import useFunctions from '../../hooks/useFunctions'
 
 export default function RegisterPetScreen () {
   const [name, setName] = useState<string>('')
@@ -14,28 +15,8 @@ export default function RegisterPetScreen () {
   const [color, setColor] = useState<string>()
   const [search, setSearch] = useState<string>('')
   const { setError, removeError, getErrorMessageByFieldName } = useErrors()
+  const { handleNameChange, handleTypeChange } = useFunctions()
 
-  function handleNameChange (event: React.ChangeEvent<HTMLInputElement>) {
-    const value = event.target.value
-    setName(value)
-
-    if (!value) {
-      setError({ field: 'name', message: 'Nome é obrigatório' })
-    } else {
-      removeError('name')
-    }
-  }
-
-  function handleTypeChange (event: React.ChangeEvent<HTMLSelectElement>) {
-    const value = event.target.value
-    setType(value)
-
-    if (!value) {
-      setError({ field: 'type', message: 'Tipo é Obrigatório' })
-    } else {
-      removeError('type')
-    }
-  }
 
   function handleChangeColor (event: React.ChangeEvent<HTMLInputElement>) {
     const value = event.target.value

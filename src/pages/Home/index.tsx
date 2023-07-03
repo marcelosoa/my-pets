@@ -1,7 +1,6 @@
 import { Container, WelcomeContainer, Header, ListContainer, PetCards } from './styled'
 import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import select from '../../assets/images/select.png';
 import LoaderComponent from '../../components/Loader'
 
 interface PetProps {
@@ -70,11 +69,12 @@ export default function HomeScreen () {
           </div>
           <div className='actions'>
             <Link to="/edit">
-              <img src={select} alt='edit' />
+              {/* <img src={select} alt='edit' /> */}
             </Link>
           </div>
         </PetCards>
         ))}
+
       </ListContainer>
     </Container>
   )

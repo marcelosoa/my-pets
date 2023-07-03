@@ -20,7 +20,7 @@ export default function useFunctions () {
     }
   }
 
-  function handleTypeChange (event: React.ChangeEvent<HTMLInputElement>) {
+  function handleTypeChange (event: React.ChangeEvent<HTMLSelectElement>) {
     const value = event.target.value
     setType(value)
 
