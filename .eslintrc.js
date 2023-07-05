@@ -39,6 +39,7 @@ module.exports = {
       '@typescript-eslint/no-floating-promises': 'off',
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
-      '@typescript-eslint/no-confusing-void-expression': 'off'
+      '@typescript-eslint/no-confusing-void-expression': 'off',
+      '@typescript-eslint/return-await': 'off'
     }
 }

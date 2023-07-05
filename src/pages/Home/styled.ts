@@ -4,6 +4,10 @@ interface HeaderProps {
   orderby: string
 }
 
+interface HeaderTwoProps {
+  hasError: boolean
+}
+
 export const Container = styled.div`
   margin-top: 32px;
   position: relative;
@@ -32,10 +36,10 @@ export const WelcomeContainer = styled.div`
   }
 `
 
-export const Header = styled.header`
+export const Header = styled.header<HeaderTwoProps>`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: ${({ hasError }) => (hasError ? 'flex-end' : 'space-between')};
   margin-top: 32px;
 
   strong {
@@ -132,4 +136,9 @@ export const PetCards = styled.div`
       margin-left: 10px;
     }
   }
+`
+export const ErrorContainer = styled.div`
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
 `

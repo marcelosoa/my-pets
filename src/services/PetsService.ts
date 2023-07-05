@@ -1,9 +1,18 @@
 import path from 'path'
 import HttpClient from './HttpClient'
 
+interface PetProps {
+  age: string
+  category_id: string
+  category_name: string
+  color: string
+  id: string
+  name: string
+  type: string
+}
 class PetsService {
-  async listPets (orderBy: string = 'asc') {
-    return await HttpClient.get(`/pets/?orderBy=${orderBy}`)
+  async listPets (orderBy: string = 'asc'): Promise<PetProps[]> {
+    return await HttpClient.get(`/pets?orderBy=${orderBy}`)
   }
 
   async listPetById (id: number) {
