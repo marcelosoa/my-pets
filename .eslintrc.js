@@ -5,7 +5,8 @@ module.exports = {
     },
     "extends": [
         "standard-with-typescript",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:react-hooks/recommended"
     ],
     "overrides": [
         {
@@ -26,13 +27,18 @@ module.exports = {
         "project": ["tsconfig.json"]
     },
     "plugins": [
-        "react"
+        "react",
+        "react-hooks"
     ],
     "rules": {
       'react/react-in-jsx-scope': 'off',
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/strict-boolean-expressions': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
-      '@typescript-eslint/no-non-null-assertion': 'off'
+      '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/no-floating-promises': 'off',
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      '@typescript-eslint/no-confusing-void-expression': 'off'
     }
 }
