@@ -3,7 +3,7 @@ import HttpClient from './HttpClient'
 
 class PetsService {
   async listPets (orderBy: string = 'asc') {
-    return await HttpClient.get(`/pets?orderBy=${orderBy}`)
+    return await HttpClient.get(`/pets/?orderBy=${orderBy}`)
   }
 
   async listPetById (id: number) {

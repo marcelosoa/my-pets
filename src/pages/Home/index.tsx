@@ -36,7 +36,7 @@ export default function HomeScreen () {
         const petList = await PetsService.listPets(orderBy)
         setPets(petList)
       } catch (error) {
-        return error
+        console.log('Caiu no Catch', error)
       } finally {
         setIsLoading(false)
       }
@@ -79,7 +79,7 @@ export default function HomeScreen () {
         </strong>
         <Link to="/register-pet">Cadastrar Novo Pet</Link>
       </Header>
-      <ListHeader orderBy={orderBy}>
+      <ListHeader orderby={orderBy}>
         <button
           type="button"
           className="sort-button"

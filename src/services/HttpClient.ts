@@ -2,10 +2,13 @@ class HttpClient {
   async get (path: string) {
     const response = await fetch(`http://localhost:3002${path}`)
 
+    const body = await response.json()
+
     if (response.ok) {
-      return await response.json()
+      return body
     }
-    throw new Error(`${response.status} - ${response.statusText}`)
+
+    throw new Error(body.error)
   }
 
   async getById (id: number) {
