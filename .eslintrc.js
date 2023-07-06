@@ -41,6 +41,7 @@ module.exports = {
       "react-hooks/exhaustive-deps": "warn",
       '@typescript-eslint/no-confusing-void-expression': 'off',
       '@typescript-eslint/return-await': 'off',
-      '@typescript-eslint/await-thenable': 'off'
+      '@typescript-eslint/await-thenable': 'off',
+      '@typescript-eslint/no-misused-promises': 'off'
     }
 }

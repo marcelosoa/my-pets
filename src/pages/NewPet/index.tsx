@@ -18,10 +18,10 @@ interface RegisterProps {
 }
 
 export default function RegisterPetScreen ({ buttonLabel, onSubmit }: RegisterProps) {
-  const [name, setName] = useState<string>()
-  const [age, setAge] = useState<string>()
-  const [type, setType] = useState<string>()
-  const [color, setColor] = useState<string>()
+  const [name, setName] = useState<string>('')
+  const [age, setAge] = useState<string>('')
+  const [type, setType] = useState<string>('')
+  const [color, setColor] = useState<string>('')
   const [search, setSearch] = useState<string>('')
   const { setError, removeError, getErrorMessageByFieldName } = useErrors()
 

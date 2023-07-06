@@ -11,8 +11,15 @@ interface formDataProps {
 }
 
 export default function NewPetForm () {
-  function handleSubmit (formData: formDataProps) {
-    console.log('New Contact -> HandleSubmit', { formData })
+  async function handleSubmit (formData: formDataProps) {
+    const pet = {
+      name: formData.name,
+      type: formData.type,
+      color: formData.color,
+      age: formData.age
+    }
+    const response = await PetsService.createPet(pet)
+    console.log(response)
   }
 
   return (

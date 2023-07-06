@@ -1,4 +1,3 @@
-import ApiError from '../errors/ApiErrors'
 
 class HttpClient {
   async get (path: string) {
@@ -7,7 +6,6 @@ class HttpClient {
     if (response.ok) {
       return response.json()
     }
-
     throw new Error(
       `${response.status} - ${response.statusText}`
     )
@@ -18,8 +16,29 @@ class HttpClient {
     return await response.json()
   }
 
-  async post () {
+  async post (path: string, body: any) {
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    })
+    const response = await fetch(`http://localhost:3002${path}`, {
+      method: 'POST',
+      body: JSON.stringify(body),
+      headers
+    })
 
+    let responseBody = null
+    const contentType = response.headers.get('Content-Type')
+    if (contentType?.includes('application/json')) {
+      responseBody = await response.json()
+    }
+
+    if (response.ok) {
+      return responseBody
+    }
+
+    throw new Error(
+      `${response.status} - ${response.statusText}`
+    )
   }
 
   async update (id: string) {

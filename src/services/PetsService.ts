@@ -1,4 +1,3 @@
-import path from 'path'
 import HttpClient from './HttpClient'
 
 interface PetProps {
@@ -16,13 +15,11 @@ class PetsService {
   }
 
   async listPetById (id: number) {
-    // const response = await fetch(`http://localhost:3002/pets?orderBy=${id}`)
-    // const petList = await response.json()
-    // return petList
+
   }
 
-  async storePets (pet: any) {
-    return await HttpClient.post()
+  async createPet (pet: any) {
+    return await HttpClient.post('/pets/', pet)
   }
 
   async updatePets (id: string) {
