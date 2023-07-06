@@ -17,12 +17,11 @@ interface RegisterProps {
   onSubmit: (formData: FormDataProps) => void
 }
 
-export default function RegisterPetScreen ({ buttonLabel, onSubmit }: RegisterProps) {
+export default function PetForm ({ buttonLabel, onSubmit }: RegisterProps) {
   const [name, setName] = useState<string>('')
   const [age, setAge] = useState<string>('')
   const [type, setType] = useState<string>('')
   const [color, setColor] = useState<string>('')
-  const [search, setSearch] = useState<string>('')
   const { setError, removeError, getErrorMessageByFieldName } = useErrors()
 
   function handleNameChange (event: React.ChangeEvent<HTMLInputElement>) {

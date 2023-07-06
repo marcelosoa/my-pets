@@ -2,6 +2,7 @@ import FormGroupComponent from '../../components/FormGroup'
 import Input from '../../components/Input'
 import { useState } from 'react'
 import { Form } from './styled'
+import PageHeader from '../../components/PageHeader'
 
 export default function EditPetScreen () {
   const [name, setName] = useState<string>()
@@ -9,6 +10,10 @@ export default function EditPetScreen () {
   const [type, setType] = useState<string>()
   const [color, setColor] = useState<string>()
   return (
+    <>
+    <PageHeader
+      title='Editar Pet'
+    />
     <Form>
       <FormGroupComponent>
       <Input
@@ -17,6 +22,7 @@ export default function EditPetScreen () {
       />
     </FormGroupComponent>
     </Form>
+    </>
 
   )
 }

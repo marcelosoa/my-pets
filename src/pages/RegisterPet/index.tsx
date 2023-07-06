@@ -1,7 +1,7 @@
 import React from 'react'
 import PageHeader from '../../components/PageHeader'
 import PetsService from '../../services/PetsService'
-import RegisterPetScreen from '../NewPet'
+import PetForm from '../PetForm'
 
 interface formDataProps {
   name: string
@@ -10,7 +10,7 @@ interface formDataProps {
   color: string
 }
 
-export default function NewPetForm () {
+export default function RegisterPetScreen () {
   async function handleSubmit (formData: formDataProps) {
     const pet = {
       name: formData.name,
@@ -24,7 +24,7 @@ export default function NewPetForm () {
   return (
     <>
       <PageHeader title="Novo Animalzinho" />
-      <RegisterPetScreen
+      <PetForm
         buttonLabel="Cadastrar Novo Pet"
         onSubmit={handleSubmit}
       />
