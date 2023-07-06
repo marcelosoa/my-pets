@@ -72,9 +72,6 @@ export default function RegisterPetScreen ({ buttonLabel, onSubmit }: RegisterPr
   function handleSubmit (event: React.FormEvent) {
     event.preventDefault()
     onSubmit({ name, age, type, color })
-    console.log({
-      name, age, type, color
-    })
   }
 
   return (
@@ -95,10 +92,10 @@ export default function RegisterPetScreen ({ buttonLabel, onSubmit }: RegisterPr
             placeholder="Tipo"
             error={getErrorMessageByFieldName('type')}
           >
-            <option value="1">Felino</option>
-            <option value="2">Cão</option>
-            <option value="3">Ave</option>
-            <option value="4">Roedor</option>
+            <option value="Felino">Felino</option>
+            <option value="Cão">Cão</option>
+            <option value="Ave">Ave</option>
+            <option value="Roedor">Roedor</option>
           </Select>
         </FormGroupComponent>
         <FormGroupComponent error={getErrorMessageByFieldName('color')}>

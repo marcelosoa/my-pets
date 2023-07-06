@@ -19,7 +19,6 @@ export default function NewPetForm () {
       age: formData.age
     }
     const response = await PetsService.createPet(pet)
-    console.log(response)
   }
 
   return (

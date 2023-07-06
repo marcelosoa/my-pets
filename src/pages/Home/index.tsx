@@ -37,7 +37,7 @@ export default function HomeScreen () {
         const petList = await PetsService.listPets(orderBy)
         setPets(petList)
       } catch (error) {
-        console.log('Caiu no Catch', error)
+        return error
       } finally {
         setIsLoading(false)
       }
