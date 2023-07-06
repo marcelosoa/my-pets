@@ -27,6 +27,7 @@ export default function HomeScreen () {
   const [search, setSearch] = useState<string>('')
   const [orderBy, setOrderBy] = useState<string>('desc')
   const [isLoading, setIsLoading] = useState(true)
+  const [hasError, setHasError] = useState(false)
 
   useEffect(() => {
     async function loadPets () {
@@ -72,7 +73,7 @@ export default function HomeScreen () {
           onChange={handleChangeSearchPet}
         />
       </WelcomeContainer>
-      <Header>
+      <Header hasError={hasError}>
         <strong>
           Pets: {filteredPets.length}
           {filteredPets.length === 1 ? ' pet' : ' pets'}

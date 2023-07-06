@@ -1,6 +1,17 @@
 import styled from 'styled-components'
 
-export const Form = styled.form`
+interface FormDataProps {
+  name: string
+  age: string
+  type: string
+  color: string
+}
+
+interface FormProps {
+  onSubmit: (event: React.FormEvent, formData: FormDataProps) => void
+}
+
+export const Form = styled.form<FormProps>`
 
 `
 

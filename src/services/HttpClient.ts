@@ -18,9 +18,8 @@ class HttpClient {
     return await response.json()
   }
 
-  async post (pets: string) {
-    const response = await fetch(`${pets}`)
-    return await response.json()
+  async post () {
+
   }
 
   async update (id: string) {

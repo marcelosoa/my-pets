@@ -21,8 +21,8 @@ class PetsService {
     // return petList
   }
 
-  async storePets (pets: string) {
-    return await HttpClient.post(pets)
+  async storePets (pet: any) {
+    return await HttpClient.post()
   }
 
   async updatePets (id: string) {

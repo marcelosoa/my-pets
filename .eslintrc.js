@@ -40,6 +40,7 @@ module.exports = {
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       '@typescript-eslint/no-confusing-void-expression': 'off',
-      '@typescript-eslint/return-await': 'off'
+      '@typescript-eslint/return-await': 'off',
+      '@typescript-eslint/await-thenable': 'off'
     }
 }

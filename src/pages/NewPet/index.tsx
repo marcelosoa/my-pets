@@ -5,9 +5,19 @@ import Button from '../../components/Button'
 import { Form, ButtonContainer } from './styled'
 import useErrors from '../../hooks/useErrors'
 import React, { useState } from 'react'
-import PageHeader from '../../components/PageHeader'
 
-export default function RegisterPetScreen () {
+interface FormDataProps {
+  name: string
+  type: string
+  color: string
+  age: string
+}
+interface RegisterProps {
+  buttonLabel: string
+  onSubmit: (formData: FormDataProps) => void
+}
+
+export default function RegisterPetScreen ({ buttonLabel, onSubmit }: RegisterProps) {
   const [name, setName] = useState<string>()
   const [age, setAge] = useState<string>()
   const [type, setType] = useState<string>()
@@ -59,10 +69,17 @@ export default function RegisterPetScreen () {
     }
   }
 
+  function handleSubmit (event: React.FormEvent) {
+    event.preventDefault()
+    onSubmit({ name, age, type, color })
+    console.log({
+      name, age, type, color
+    })
+  }
+
   return (
     <>
-      <PageHeader title="Novo Animalzinho" />
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <FormGroupComponent error={getErrorMessageByFieldName('name')}>
           <Input
             value={name}
@@ -94,14 +111,14 @@ export default function RegisterPetScreen () {
         </FormGroupComponent>
         <FormGroupComponent error={getErrorMessageByFieldName('age')}>
           <Input
-          value={age}
-          onChange={handleChangeAge}
-          placeholder="Idade do animalzinho"
-          error={getErrorMessageByFieldName('age')}
+            value={age}
+            onChange={handleChangeAge}
+            placeholder="Idade do animalzinho"
+            error={getErrorMessageByFieldName('age')}
           />
         </FormGroupComponent>
         <ButtonContainer>
-          <Button type="submit">Cadastrar Novo Pet</Button>
+          <Button type="submit">{buttonLabel}</Button>
         </ButtonContainer>
       </Form>
     </>
