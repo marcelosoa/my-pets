@@ -1,53 +1,39 @@
 
 class HttpClient {
   async get (path: string) {
-    const response = await fetch(`http://localhost:3002${path}`)
-
-    if (response.ok) {
-      return response.json()
-    }
-    throw new Error(
-      `${response.status} - ${response.statusText}`
-    )
-  }
-
-  async getById (id: number) {
-    const response = await fetch(`${id}`)
-    return await response.json()
+    return this.makeRequest(path, { method: 'GET' })
   }
 
   async post (path: string, body: any) {
-    const headers = new Headers({
-      'Content-Type': 'application/json'
-    })
-    const response = await fetch(`http://localhost:3002${path}`, {
+    return this.makeRequest(path, {
       method: 'POST',
-      body: JSON.stringify(body),
-      headers
+      body
     })
-
-    let responseBody = null
-    const contentType = response.headers.get('Content-Type')
-    if (contentType?.includes('application/json')) {
-      responseBody = await response.json()
-    }
-
-    if (response.ok) {
-      return responseBody
-    }
-
-    throw new Error(
-      `${response.status} - ${response.statusText}`
-    )
   }
 
-  async update (id: string, path: string, body: any) {
-    const headers = new Headers({
-      'Content-Type': 'application/json'
-    })
-    const response = await fetch(`http://localhost:3002/:${id}/${path}`, {
+  async update (id: any, path: string, body: any) {
+    return this.makeRequest(`${path}/${id}`, {
       method: 'PUT',
-      body: JSON.stringify(body),
+      body
+    })
+  }
+
+  async delete (id: any, path: string, body: any) {
+    return this.makeRequest(`${path}/${id}`, {
+      method: 'DELETE',
+      body
+    })
+  }
+
+  async makeRequest (path: string, options: any) {
+    const headers = new Headers()
+
+    if (options.body) {
+      headers.append('Content-Type', 'application/json')
+    }
+    const response = await fetch(`http://localhost:3002${path}`, {
+      method: options.method,
+      body: JSON.stringify(options.body),
       headers
     })
 
@@ -64,10 +50,6 @@ class HttpClient {
     throw new Error(
       `${response.status} - ${response.statusText}`
     )
-  }
-
-  async delete (id: string) {
-
   }
 }
 

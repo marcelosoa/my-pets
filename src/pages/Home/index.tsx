@@ -8,6 +8,7 @@ import {
 import { Link, useHistory } from 'react-router-dom'
 import { useEffect, useState, useMemo } from 'react'
 import select from '../../assets/images/select.png'
+import lixeira from '../../assets/images/lixeira.png'
 import arrowup from '../../assets/images/arrowup.png'
 import LoaderComponent from '../../components/Loader'
 import PetsService from '../../services/PetsService'
@@ -103,10 +104,13 @@ export default function HomeScreen () {
             <span>Idade: {pet.age} </span>
           </div>
           <div className="actions">
-            <div onClick={() => history.push(`/edit/${pet.id}`, [
+            <Link to={`/edit/${pet.id}`}>
+              <img src={select} alt='edit' />
+            </Link>
+            {/* <div onClick={() => history.push(`/edit/${pet.id}`, [
               pet])}>
               <img src={select} alt="edit" />
-            </div>
+            </div> */}
           </div>
         </PetCards>
       ))}

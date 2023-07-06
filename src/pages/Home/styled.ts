@@ -94,7 +94,7 @@ export const PetCards = styled.div`
   background: ${({ theme }) => theme.colors.primary.secondary_button};
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04);
   padding: 16px;
-  border-radius: 4px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,7 +133,7 @@ export const PetCards = styled.div`
       color: aqua;
       background: transparent;
       border: none;
-      margin-left: 10px;
+      margin-left: 15px;
     }
   }
 `
