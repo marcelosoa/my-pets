@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { Container } from './styled'
 
 interface PageProps {
-  title: string
+  title: string | undefined
 }
 
 export default function PageHeader ({ title }: PageProps) {

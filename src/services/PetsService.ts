@@ -22,8 +22,8 @@ class PetsService {
     return await HttpClient.post('/pets/', pet)
   }
 
-  async updatePets (id: string) {
-    return await HttpClient.update(id)
+  async updatePets (id: string, body: any) {
+    return await HttpClient.update('/pets/', id, body)
   }
 
   async deletePets (id: string) {

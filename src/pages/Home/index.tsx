@@ -5,7 +5,7 @@ import {
   ListHeader,
   PetCards
 } from './styled'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useEffect, useState, useMemo } from 'react'
 import select from '../../assets/images/select.png'
 import arrowup from '../../assets/images/arrowup.png'
@@ -28,6 +28,8 @@ export default function HomeScreen () {
   const [orderBy, setOrderBy] = useState<string>('desc')
   const [isLoading, setIsLoading] = useState(true)
   const [hasError, setHasError] = useState(false)
+
+  const history = useHistory()
 
   useEffect(() => {
     async function loadPets () {
@@ -101,9 +103,10 @@ export default function HomeScreen () {
             <span>Idade: {pet.age} </span>
           </div>
           <div className="actions">
-            <Link to='/edit'>
+            <div onClick={() => history.push(`/edit/${pet.id}`, [
+              pet])}>
               <img src={select} alt="edit" />
-            </Link>
+            </div>
           </div>
         </PetCards>
       ))}

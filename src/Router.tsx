@@ -9,7 +9,7 @@ export default function Routes () {
     <Switch>
       <Route path="/" exact component={HomeScreen} />
       <Route path="/register-pet" exact component={RegisterPetScreen} />
-      <Route path="/edit" exact component={EditPetScreen} />
+      <Route path="/edit/:id" exact component={EditPetScreen} />
     </Switch>
   )
 }
